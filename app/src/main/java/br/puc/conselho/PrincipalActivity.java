@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -16,10 +17,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
+import com.parse.Parse;
+
+import java.util.HashMap;
+import java.util.List;
+
 public class PrincipalActivity extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, FaculdadeFragment.OnFragmentInteractionListener,
+            DAFragment.OnFragmentInteractionListener{
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -44,15 +52,32 @@ public class PrincipalActivity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "JuieptN1QwyYM4iR1Q3qloBQh7OZMSznjCUbXMSu", "m63YVkJwhCplxrVfnFqZKjeCSMgdO1Gz3MeZJKy5");
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch (position) {
+            case 0: fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 1: fragmentManager.beginTransaction()
+                    .replace(R.id.container, FaculdadeFragment.newInstance())
+                    .commit();
+                break;
+            case 2: fragmentManager.beginTransaction()
+                    .replace(R.id.container, DAFragment.newInstance())
+                    .commit();
+                break;
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -103,6 +128,16 @@ public class PrincipalActivity extends Activity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFaculdadeInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onDAInteraction(Uri uri) {
+
     }
 
     /**
