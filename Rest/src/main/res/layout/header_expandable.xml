@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CheckedTextView
+    android:layout_width="fill_parent"
+    android:gravity="start"
+    android:layout_height="50dp"
+    android:id="@+id/txtGroup"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    </CheckedTextView>

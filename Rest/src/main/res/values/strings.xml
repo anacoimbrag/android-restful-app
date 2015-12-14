@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Conselho</string>
+    <string name="title_activity_principal">Conselho</string>
+
+    <string name="title_section1">Perfil</string>
+    <string name="title_section2">DA</string>
+    <string name="title_section3">Membros</string>
+    <string name="title_section4">Mesa do Conselho</string>
+    <string name="title_section5">Reniões</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="spinnerPrompt">Prédio</string>
+    <string name="spinnerCurso">Curso</string>
+
+    <string name="restPath">http://192.168.0.42:8080</string>
+
+    <string-array name="cursos">
+        <item>Ciência da Computação</item>
+        <item>Direito</item>
+        <item>Engenharia Elétrica</item>
+        <item>Engenharia de Produção</item>
+        <item>Arquitetura</item>
+    </string-array>
+
+    <string-array name="das">
+        <item>DACC</item>
+        <item>DA Evolução</item>
+        <item>DA Direito</item>
+    </string-array>
+
+    <string-array name="predios">
+        <item>43</item>
+        <item>34</item>
+        <item>15</item>
+        <item>6</item>
+        <item>13</item>
+    </string-array>
+</resources>
